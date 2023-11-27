@@ -39,25 +39,25 @@ void bubblesort(int n, int a[]) {
 int main() {
     struct timespec start, end;
 	double time_used;
-    int n;
-    printf("Enter the number of elements: ");
+    int n, i;
+    printf("nhap vao so luong so hang: ");
     scanf("%d", &n);
 
     int a[n];
-    for (int i = 1; i <= n; i++) {
-        printf("Enter element %d: ", i);
+    for ( i = 1; i <= n; i++) {
+        printf("nhap vao so hang thu %d: ", i);
         scanf("%d", &a[i]);
     }
     int number;
     do{
-		printf("choose 1 for selectionsoft\nchoose 2 for bubblesort\nchoose 3 for end\n");
-    	printf("Enter your choose: ");
+	printf("chon mot trong cac lenh sau:\n 1 for selectionsoft\n	2 for bubblesort\n	3 for end\n");
+    	printf("lua chon cua ban: ");
     	scanf("%d", &number);
 		if(number==1){
 			clock_gettime(CLOCK_MONOTONIC, &start); 
 			selectionsoft( n, a);
-   	 		printf("\nSorted array: ");
-    		for (int i = 1; i <= n; i++) {
+   	 		printf("\nChuoi da sap xep: ");
+    		for ( i = 1; i <= n; i++) {
       			printf("%d ", a[i]);
     		}printf("\n");
    	 		clock_gettime(CLOCK_MONOTONIC, &end);
@@ -66,16 +66,16 @@ int main() {
 		}else if(number==2){
 			clock_gettime(CLOCK_MONOTONIC, &start);  
 			bubblesort(n, a);
-    		printf("\nSorted array: ");
-    		for (int i = 1; i <= n; i++) {
-        		printf("%d ", a[i]);
-    		}printf("\n");
-    		clock_gettime(CLOCK_MONOTONIC, &end);
+    			printf("\nChuoi da sap xep: ");
+    			for ( i = 1; i <= n; i++) {
+        			printf("%d ", a[i]);
+    			}printf("\n");
+    			clock_gettime(CLOCK_MONOTONIC, &end);
 			time_used = (end.tv_sec - start.tv_sec) + (double)(end.tv_nsec - start.tv_nsec) / 1000000000.0;
   			printf("time used: %f second\n\n", time_used);
   		}else if(number==3){
   			break;
-		}else printf("please re-choose option\n\n");
+		}else printf("lenh khong hop le. Hay chon lai lenh\n\n");
 	}while (number!=3);
     return 0;
 }
