@@ -36,24 +36,22 @@ int main() {
 	int n, i;
 	printf("nhap vao so luong nhan vien: ");
 	scanf("%d", &n);
+	getchar();
 	struct employee *emp = (struct employee*)malloc(n * sizeof(struct employee));
 	for(i=0; i<n; i++){
 		printf("nhan vien thu %d \n", i+1);
 		printf("ho va ten nhan vien: ");
-		getchar();
 		fgets(emp[i].name,sizeof(emp[i].name), stdin);
 		emp[i].name[strcspn(emp[i].name, "\n")] = '\0';
-		while(getchar() != '\n');
 		printf("ma so nhan vien: ");
 		fgets(emp[i].employeecode,sizeof(emp[i].employeecode), stdin);
 		emp[i].employeecode[strcspn(emp[i].employeecode, "\n")] = '\0';
-		while(getchar() != '\n');
 		printf("vi tri cua nhan vien: ");
 		fgets(emp[i].position,sizeof(emp[i].position), stdin);
 		emp[i].position[strcspn(emp[i].position, "\n")] = '\0';
-		while(getchar() != '\n');
 		printf("luong cua nhan vien: ");
 		scanf("%ld", &emp[i].salary);
+		while(getchar() != '\n');
 	}
 	int c;
 	do{
@@ -72,23 +70,20 @@ int main() {
 				printf("nhap vao so nhan vien them vao: ");
 				scanf("%d", &count);
 				n=n+count;
+				getchar();
 				emp = (struct employee*)realloc(emp, n * sizeof(struct employee));
 				for(i=n-count; i<n; i++){
 					printf("nhan vien thu %d \n", i+1);
-					while(getchar() != '\n');
 					printf("ho va ten nhan vien: ");
 					fgets(emp[i].name,sizeof(emp[i].name), stdin);
 					emp[i].name[strcspn(emp[i].name, "\n")] = '\0';
-					while(getchar() != '\n');
-					printf("ma so nhan vien: ");
+					printf("ma nhan vien: ");
 					fgets(emp[i].employeecode,sizeof(emp[i].employeecode), stdin);
 					emp[i].employeecode[strcspn(emp[i].employeecode, "\n")] = '\0';
-					while(getchar() != '\n');
 					printf("vi tri cua nhan vien: ");
-					fgets(emp[i].position,sizeof(emp[i].position), stdin);
+					fgets(emp[i].position,50, stdin);
 					emp[i].position[strcspn(emp[i].position, "\n")] = '\0';
-					while(getchar() != '\n');
-					printf("luong cua nhan vien: ");
+					printf("luong nhan vien: ");
 					scanf("%ld", &emp[i].salary);
 					while(getchar() != '\n');
 				}
@@ -96,10 +91,8 @@ int main() {
 				int number;
 				char empcode[50];
 				printf(" nhap ma nhan vien phan ban muon xoa:");
-				getchar();
 				fgets(empcode, 50, stdin);
 				empcode[strcspn(empcode, "\n")] = '\0';
-				while(getchar() != '\n');
 				for(i=0; i<n; i++){
 					if(strcmp(emp[i].employeecode, empcode)==0){
 						int j;
@@ -114,25 +107,17 @@ int main() {
 				int number;
 				char empcode[50];
 				printf(" nhap ma nhan vien phan ban muon cap nhat:");
-				getchar();
 				fgets(empcode, 50, stdin);
 				empcode[strcspn(empcode, "\n")] = '\0';
-				while(getchar() != '\n');
 				for(i=0; i<n; i++){
 					if(strcmp(emp[i].employeecode, empcode)==0){
 						printf("nhan vien thu %d \n", i+1);
 						printf("ho va ten nhan vien: ");
-						fgets(emp[i].name,sizeof(emp[i].name), stdin);
-						emp[i].name[strcspn(emp[i].name, "\n")] = '\0';
-						while(getchar() != '\n');
-						printf("ma so nhan vien: ");
-						fgets(emp[i].employeecode,sizeof(emp[i].employeecode), stdin);
-						emp[i].employeecode[strcspn(emp[i].employeecode, "\n")] = '\0';
-						while(getchar() != '\n');
+						fgets(emp[i].name,50, stdin);
+						printf("ma nhan vien: ");
+						fgets(emp[i].employeecode,50, stdin);
 						printf("vi tri cua nhan vien: ");
-						fgets(emp[i].position,sizeof(emp[i].position), stdin);
-						emp[i].position[strcspn(emp[i].position, "\n")] = '\0';
-						while(getchar() != '\n');
+						fgets(emp[i].position,50, stdin);
 						printf("luong cua nhan vien: ");
 						scanf("%ld", &emp[i].salary);
 					}
