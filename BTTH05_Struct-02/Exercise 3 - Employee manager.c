@@ -135,7 +135,7 @@ int main() {
 		}else if(c==3){
 			sortbyname(n,emp);
 			for(i=0; i<n; i++){
-				printf("nhan vien thu %d", i+1);
+				printf("nhan vien thu %d\n", i+1);
 				print(emp[i]);
 			}
 		}
