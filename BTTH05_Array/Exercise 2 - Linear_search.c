@@ -8,7 +8,7 @@ int main(){
 	int arr[n];
 	for(e=1; e<=n; e++){
 		printf("nhap vao so thu %d: ", e);
-		scanf("%d", &d[e]);
+		scanf("%d", &arr[e]);
 	}printf("nhap so can tim: ");
 	scanf("%d", &search);
 	//program
@@ -22,7 +22,7 @@ int main(){
 	if (a==0)
 		printf("Khong co so can tim.");
 	else
-		printf("So can tim o vi tri: %d", a);
+		printf("So can tim o vi tri: %d", e);
 	return 0;
 }
 
