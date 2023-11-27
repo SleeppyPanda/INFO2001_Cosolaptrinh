@@ -150,7 +150,7 @@ int main() {
 		getchar();
 		if(s==1){
 			for(a=0; a<i; a++){
-				printf(stud[a]);
+				print(stud[a]);
 			}
 		}else if(s==2){
 			int number, b;
