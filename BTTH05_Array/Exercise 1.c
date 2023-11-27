@@ -5,7 +5,7 @@ void swap(int *x, int *y) {
     *x = *y;
     *y = z;
 }
-void selectionsoft(int n, int a[]){
+void selectionsort(int n, int a[]){
 	
 	int i, j;
 	for( i = 1; i<n; i++)
@@ -50,12 +50,12 @@ int main() {
     }
     int number;
     do{
-	printf("chon mot trong cac lenh sau:\n 1 for selectionsoft\n	2 for bubblesort\n	3 for end\n");
+	printf("chon mot trong cac lenh sau:\n 1 for selectionsort\n	2 for bubblesort\n	3 for end\n");
     	printf("lua chon cua ban: ");
     	scanf("%d", &number);
 		if(number==1){
 			clock_gettime(CLOCK_MONOTONIC, &start); 
-			selectionsoft( n, a);
+			selectionsort( n, a);
    	 		printf("\nChuoi da sap xep: ");
     		for ( i = 1; i <= n; i++) {
       			printf("%d ", a[i]);
