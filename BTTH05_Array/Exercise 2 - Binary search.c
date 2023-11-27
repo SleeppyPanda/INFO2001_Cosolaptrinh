@@ -12,15 +12,15 @@ int search(int first, int last, int find, int d[]){
 		else
 			return search(mid+1, last, find, d);
 	}
-}// khai báo hàm
+}// khai bÃ¡o hÃ m
 int main(){
 	//input
 	int n, i, number;
-	printf("nhap n: ");
+	printf("nhap vao so luong so hang cua day da sap xep: ");
 	scanf("%d", &n);
 	int arr[n];
 	for(i=1; i<=n; i++){
-		printf("nhap %d: ", i+1);
+		printf("nhap vao so thu %d: ", i);
 		scanf("%d", &arr[i]);
 	}printf("nhap so can tim: ");
 	scanf("%d", &number);
@@ -30,6 +30,6 @@ int main(){
 	if (a==0)
 		printf("Khong co so can tim.");
 	else
-		printf("So can tim o vi tri: %d", a);
+		printf("So can tim o vi tri thu %d", a);
 	return 0;
 }
